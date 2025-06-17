@@ -1,0 +1,36 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background-color, #fff);
+  color: var(--text-color, #222);
+  font-family: var(--font-primary, sans-serif);
+}
+
+.lacfitness-page {
+  flex: 1;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+
+.section {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-color, #222);
+}
+
+.subheading {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: var(--text-muted, #555);
+}

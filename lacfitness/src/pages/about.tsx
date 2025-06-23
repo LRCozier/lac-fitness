@@ -6,7 +6,7 @@ const AboutPage = () => {
   return(
     <>
     <Layout>
-      <Section children={undefined}>
+      <Section title="About" children={undefined}>
         
       </Section>
     </Layout>

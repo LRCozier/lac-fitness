@@ -1,12 +1,12 @@
 import Layout from "../components/Layouts/layout";
 import Section from "../components/Layouts/section";
 
-const ContactPage = () => {
+const Services = () => {
 
   return(
     <>
     <Layout>
-      <Section children={undefined}>
+      <Section title="Services" children={undefined}>
         
       </Section>
     </Layout>
@@ -14,4 +14,4 @@ const ContactPage = () => {
   )
 }
 
-export default ContactPage;
+export default Services;

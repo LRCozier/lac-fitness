@@ -6,7 +6,7 @@ const HomePage = () => {
   return(
     <>
     <Layout>
-      <Section children={undefined}>
+      <Section title="L.A.C Fitness" subtitle="From Battle to Breakthrough"children={undefined}>
         
       </Section>
     </Layout>

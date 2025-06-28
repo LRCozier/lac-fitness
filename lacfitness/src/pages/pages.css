@@ -3,7 +3,7 @@
   flex-direction: column;
   padding: 2rem;
   gap: 2rem;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   min-height: 100vh;
   background: var(--background-color, #f5f5f5);
@@ -12,7 +12,6 @@
 @media (min-width: 768px) {
   .landing-container {
     flex-direction: row;
-    padding: 4rem;
   }
 }
 
@@ -20,45 +19,64 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.hero-image {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: url(../assets/hero.jpg);
+  background-size: cover;
+  min-height: 300px;
 }
 
 .landing-right {
   flex: 1;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.site-title {
+.title {
   font-size: 3rem;
   margin-bottom: 1rem;
   font-family: var(--font-primary, sans-serif);
-  color: var(--text-color, #111);
+  color: var(--primary-color, #e4000c);
 }
 
-.site-tagline {
+.tagline {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   color: var(--text-muted, #555);
 }
 
 .cta-button {
-  background-color: var(--primary-color, #007bff);
+  background-color: var(--primary-color, #e4000c);
   color: white;
   padding: 1rem 2rem;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
+  font-family: var(--font-primary, sans-serif);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: var(--accent-color, #0056b3);
+  background-color: var(--accent-color, white);
+  color: #e4000c;
+  border-color: #e4000c;
+  border-width: 0.5em;
+}
+
+.title {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--primary-color, #e4000c);
+  font-family: var(--font-primary, sans-serif);
+}
+
+.tagline {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: var(--text-muted, #555);
 }

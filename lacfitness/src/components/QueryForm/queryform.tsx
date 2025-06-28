@@ -68,14 +68,6 @@ const QueryForm: React.FC = () => {
         <label>
           <input
             type="checkbox"
-            value="nutritional_plan"
-            {...register('services')}
-          />
-          Nutritional Plan
-        </label>
-        <label>
-          <input
-            type="checkbox"
             value="personal_training_sessions"
             {...register('services')}
           />

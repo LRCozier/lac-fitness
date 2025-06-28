@@ -1,6 +1,7 @@
 import React from 'react'
 import QueryForm from '../components/QueryForm/queryform'
 import { Helmet } from 'react-helmet'
+import './pages.css'
 
 const RegisterInterest: React.FC = () => {
   return (
@@ -14,8 +15,8 @@ const RegisterInterest: React.FC = () => {
       </Helmet>
 
       <main>
-        <h1>Register Your Interest</h1>
-        <p>Fill in the form below and I will get back to you.</p>
+        <h1 className='title'>Register Your Interest</h1>
+        <p className='tagline'>Fill in the form below and I will get back to you.</p>
 
         <QueryForm />
       </main>

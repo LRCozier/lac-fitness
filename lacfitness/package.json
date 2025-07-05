@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://LRCozier.github.io/lacfitness",
+  "homepage": "https://LRCozier.github.io/lac-fitness",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

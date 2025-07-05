@@ -20,7 +20,7 @@ const QueryForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     try {
-      await emailjs.send('service_iswqmqe', 'template_sgfyded', data, {
+      await emailjs.send('service_lacfitness', 'template_lacfitness', data, {
         publicKey: 'YNexT8O1rsZO9dyTq'
       })
       console.log('FORM SUBMITTED!')

@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layouts/layout";
-import Section from "../components/layouts/secion";
+import Section from "../components/layouts/section";
 
 export const metadata = {
   title: "L.A.C Fitness",

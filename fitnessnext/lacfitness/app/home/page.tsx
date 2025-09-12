@@ -10,7 +10,7 @@ export const metadata = {
 const HomePage = () => {
   return (
     <Layout>
-      <Section title="L.A.C Fitness" subtitle="From Battle to Breakthrough">
+      <Section title="L.A.C Fitness" subtitle="From Battle to Breakthrough" children={undefined}>
         
       </Section>
     </Layout>

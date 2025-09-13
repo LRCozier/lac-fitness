@@ -5,7 +5,6 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
-  faFacebook,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import "./footer.css";
@@ -28,13 +27,6 @@ const Footer: React.FC = () => {
           rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faInstagram} />
-        </a>
-        <a
-          href="https://facebook.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faFacebook} />
         </a>
         <a
           href="https://www.linkedin.com/in/luke-rudderham-cozier-30205343/"

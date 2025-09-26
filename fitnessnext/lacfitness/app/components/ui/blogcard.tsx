@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BlogCardProps } from '.../types/index.ts';
+import { BlogCardProps } from '@/app/types';
 
 const BlogCard =({ post }: BlogCardProps) => {
   return (

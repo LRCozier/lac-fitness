@@ -1,4 +1,4 @@
-import { hygraphClient } from '@/lib/hygraph-client';
+import { hygraphClient } from '../lib/hygraph-client';
 import { Post, Testimonials } from '../types';
 
 export async function fetchGraphQL<T>(query: string, variables?: any): Promise<T> {

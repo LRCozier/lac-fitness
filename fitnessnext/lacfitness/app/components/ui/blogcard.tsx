@@ -3,7 +3,7 @@ import { BlogCardProps } from '@/app/types';
 
 const BlogCard =({ post }: BlogCardProps) => {
   return (
-    <div className="blog-card">
+    <article className="blog-card">
       <img className="blog-card-image" src={post.imageUrl} alt={post.title} />
       <div className="blog-card-content">
         <p className="blog-card-category">{post.category}</p>
@@ -15,7 +15,7 @@ const BlogCard =({ post }: BlogCardProps) => {
           Read More &rarr;
         </Link>
       </div>
-    </div>
+    </article>
   );
 }
 

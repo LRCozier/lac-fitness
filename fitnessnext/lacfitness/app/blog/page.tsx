@@ -1,4 +1,9 @@
-const Blog = () => {
+import { getBlogPosts } from '../utils/graphql-utils';
+import BlogCard from '../components/ui/blogcard';
+
+const BlogPage = async () => {
+  const posts = await getBlogPosts();
+
   return (
     <div className="section animate-fade-in">
       <div className="container">
@@ -6,12 +11,21 @@ const Blog = () => {
           <h1 className="page-title">THE STRENGTH BLOG</h1>
           <p className="section-text">Knowledge is power. Here's your weekly dose.</p>
         </div>
-        <div className="blog-grid">
-          {/* ADD CMS MAPPING THROUGH GRAPH QL API */}
-        </div>
+        
+        {posts.length > 0 ? (
+          <div className="blog-grid">
+            {posts.map(post => (
+              <BlogCard key={post.id} post={post} />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-text-secondary">No blog posts available yet. Check back soon!</p>
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-export default Blog;
+export default BlogPage;

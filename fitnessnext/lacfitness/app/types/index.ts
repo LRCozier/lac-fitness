@@ -10,7 +10,8 @@ export interface Testimonials {
   id: string;
   clientName: string;
   location: string;
-  testimonialTest: string;
+  testimonialText: string;
+  rating: number;
   category: string;
   featured: boolean;
   createdAt: string;
@@ -18,4 +19,8 @@ export interface Testimonials {
 
 export interface BlogCardProps {
   post: Post;
+}
+
+export interface TestimonialCardProps{
+  testimonial: Testimonials;
 }

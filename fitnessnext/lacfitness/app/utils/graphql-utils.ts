@@ -1,16 +1,17 @@
 import { hygraphClient } from '../lib/hygraph-client';
+import { fallbackBlogPosts, fallbackTestimonials } from '../lib/constants';
 import { Post, Testimonials } from '../types';
 
-export async function fetchGraphQL<T>(query: string, variables?: any): Promise<T> {
+export const fetchGraphQL = async <T>(query: string, variables?: any): Promise<T> => {
   try {
     return await hygraphClient.request<T>(query, variables);
   } catch (error) {
     console.error('GraphQL Error:', error);
     throw new Error('Failed to fetch data from CMS');
   }
-}
+};
 
-export async function getBlogPosts(): Promise<Post[]> {
+export const getBlogPosts = async (): Promise<Post[]> => {
   try {
     const data = await fetchGraphQL<{ posts: Post[] }>(`
       query GetBlogPosts {
@@ -30,9 +31,9 @@ export async function getBlogPosts(): Promise<Post[]> {
     console.log('Using fallback blog posts');
     return fallbackBlogPosts;
   }
-}
+};
 
-export async function getFeaturedTestimonials(): Promise<Testimonials[]> {
+export const getFeaturedTestimonials = async (): Promise<Testimonials[]> => {
   try {
     const data = await fetchGraphQL<{ testimonials: Testimonials[] }>(`
       query GetFeaturedTestimonials {
@@ -48,11 +49,12 @@ export async function getFeaturedTestimonials(): Promise<Testimonials[]> {
     `);
     return data.testimonials;
   } catch (error) {
-    console.log('Using fallback');
+    console.log('Using fallback testimonials');
+    return fallbackTestimonials.filter(t => t.featured).slice(0, 3);
   }
-}
+};
 
-export async function getAllTestimonials(): Promise<Testimonials[]> {
+export const getAllTestimonials = async (): Promise<Testimonials[]> => {
   try {
     const data = await fetchGraphQL<{ testimonials: Testimonials[] }>(`
       query GetAllTestimonials {
@@ -69,9 +71,9 @@ export async function getAllTestimonials(): Promise<Testimonials[]> {
     `);
     return data.testimonials;
   } catch (error) {
-    console.log('Using fallback');
+    console.log('Using fallback testimonials');
+    return fallbackTestimonials;
   }
-}
-
+};
 
 

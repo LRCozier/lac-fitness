@@ -5,15 +5,14 @@ export const SITE_CONFIG = {
   name: 'Luke Cozier Strength & Conditioning',
   title: 'Luke Cozier - Strength & Conditioning | Richmond Upon Thames',
   description: 'Professional strength and conditioning training focused on skill progression and functional strength. Personal training in Richmond Upon Thames.',
-  url: 'https://lukecozier.com',
+  url: 'https://lacfitness.com',
   author: 'Luke Cozier',
   location: 'Richmond Upon Thames, London',
-  email: 'luke@lukecozier.com',
-  phone: '+44 20 1234 5678',
+  email: 'lrcozier@gmail.com',
   social: {
-    instagram: 'https://instagram.com/lukecozier',
-    twitter: 'https://twitter.com/lukecozier',
-    linkedin: 'https://linkedin.com/in/lukecozier',
+    instagram: 'https://www.instagram.com/lacfitnessuk',
+    tiktok: 'https://www.tiktok.com/@lacozierfitness',
+    linkedin: 'https://www.linkedin.com/in/luke-rudderham-cozier-30205343/',
   },
 } as const;
 
@@ -36,49 +35,33 @@ export const fallbackBlogPosts: Post[] = [
     content: "Full content would go here... This is a comprehensive guide to mastering the fundamental lifts that form the cornerstone of any effective strength training program.",
     category: 'Technique',
     slug: 'foundational-lifts',
-    featuredImage: { 
-      url: 'https://placehold.co/600x400/18181b/facc15?text=Foundational+Lifts',
-      alt: 'Proper lifting technique demonstration'
-    },
     publishedAt: new Date('2024-01-15').toISOString()
   },
   {
-    id: '2',
+    id: 2,
     title: "Why 'Progressive Overload' is More Than Just Adding Weight",
     excerpt: "True progress comes from strategic, intelligent programming. Learn how to manipulate variables for continuous gains.",
     content: "Progressive overload is the fundamental principle behind all strength and muscle gains. But it's not just about adding more weight to the bar...",
     category: 'Programming',
     slug: 'progressive-overload',
-    featuredImage: { 
-      url: 'https://placehold.co/600x400/18181b/f87171?text=Progression',
-      alt: 'Progress tracking and programming'
-    },
     publishedAt: new Date('2024-01-08').toISOString()
   },
   {
-    id: '3',
+    id: 3,
     title: "Nutrition for Strength: Fueling Performance, Not Just Aesthetics",
     excerpt: "Forget 'beach body' diets. Discover how to eat for power, recovery, and long-term health.",
     content: "Nutrition plays a crucial role in strength development. It's not about looking good, but about performing at your best...",
     category: 'Nutrition',
     slug: 'nutrition-for-strength',
-    featuredImage: { 
-      url: 'https://placehold.co/600x400/18181b/4ade80?text=Nutrition',
-      alt: 'Healthy nutrition for strength training'
-    },
     publishedAt: new Date('2024-01-01').toISOString()
   },
   {
-    id: '4',
+    id: 4,
     title: "The Mind-Muscle Connection is Real, and Here's How to Build It",
     excerpt: "Lifting is a mental game. We explore the neurological aspects of strength training and how to leverage them.",
     content: "The connection between your mind and muscles is more than just a metaphor. It's a physiological reality that can significantly impact your training...",
     category: 'Mindset',
     slug: 'mind-muscle-connection',
-    featuredImage: { 
-      url: 'https://placehold.co/600x400/18181b/60a5fa?text=Mindset',
-      alt: 'Mental focus during training'
-    },
     publishedAt: new Date('2023-12-25').toISOString()
   }
 ];

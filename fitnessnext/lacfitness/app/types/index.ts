@@ -3,8 +3,8 @@ export interface Post {
   title: string,
   excerpt: string;
   category: string;
+  content: string;
   slug: string;
-  imageUrl: string;
   publishedAt: string;
 }
 

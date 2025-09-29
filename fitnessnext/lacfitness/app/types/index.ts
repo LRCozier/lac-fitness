@@ -38,3 +38,10 @@ export interface BlogCardProps {
 export interface TestimonialCardProps{
   testimonial: Testimonials;
 }
+
+export interface FormErrors {
+  name?: string;
+  email?: string;
+  message?: string;
+  services?: string;
+}

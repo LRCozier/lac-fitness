@@ -29,6 +29,25 @@ const ContactForm = () => {
         <input id="email" name="email" type="email" autoComplete="email" required />
       </div>
       <div className="form-group">
+        <label>Service</label>
+        <div>
+          <input type="checkbox" id="service1" name="service1" value="Personal Traning Sessions" />
+          <label htmlFor="service1"> Personal Training Sessions</label>
+        </div>
+        <div>
+          <input type="checkbox" id="service2" name="service2" value="Group Training Sessions" />
+          <label htmlFor="service2"> Group Training Sessions</label>
+        </div>
+        <div>
+          <input type="checkbox" id="service3" name="service3" value="Online Coaching" />
+          <label htmlFor="service3"> Online Coaching</label>
+        </div>
+        <div>
+          <input type="checkbox" id="service4" name="service4" value="One off Consultation" />
+          <label htmlFor="service4"> One off consultation</label>
+        </div>
+      </div>
+      <div className="form-group">
         <label htmlFor="message">Message</label>
         <textarea id="message" name="message" rows={4} required></textarea>
       </div>
@@ -42,5 +61,6 @@ const ContactForm = () => {
     </form>
   );
 }
+
 
 export default ContactForm;

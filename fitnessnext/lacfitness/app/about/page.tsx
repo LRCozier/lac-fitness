@@ -13,7 +13,7 @@ const About = () => {
             <p>Fitness isn't about a number on a scale or a fleeting compliment. It is about how you feel when you pick up your child, 
               the energy you have at the end of a long day, and the quiet confidence that comes from knowing you are capable.</p>
             <p>I know the other side. I was the "fat kid." I know the mental toll of avoiding mirrors and feeling left behind. My own transformation wasn't just physical; 
-              it was the discovery that strength training is the most powerful tool for building mental resilience and
+              it was the discovery that strength training is the most powerful tool for building mental resilience and 
               <span className="text-accent font-bold">reclaiming your life.</span>.</p>
             <p>I specialize in evidence-based strength and conditioning, focusing on compound movements, progressive overload, 
               and perfect form. My approach is for those who are serious about long-term progress, not short-term fixes.</p>

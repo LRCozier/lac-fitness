@@ -1,19 +1,17 @@
 import Link from 'next/link';
 import { BlogCardProps } from '@/app/types';
 
-const BlogCard =({ post }: BlogCardProps) => {
+const BlogCard = ({ post }: BlogCardProps) => {
   return (
     <article className="blog-card">
-      <img className="blog-card-image" src={post.imageUrl} alt={post.title} />
+      <img className="blog-card-image" src={post.featuredImage.url} alt={post.title} loading="lazy" />
       <div className="blog-card-content">
         <p className="blog-card-category">{post.category}</p>
         <h3 className="blog-card-title">{post.title}</h3>
         <p className="blog-card-excerpt">{post.excerpt}</p>
       </div>
       <div className="blog-card-footer">
-        <Link href={`/blog/${post.id}`} className="blog-card-link">
-          Read More &rarr;
-        </Link>
+        <Link href={`/blog/${post.slug}`} className="blog-card-link">Read More &rarr;</Link>
       </div>
     </article>
   );

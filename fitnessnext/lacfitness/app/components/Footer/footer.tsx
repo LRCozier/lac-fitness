@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { DumbbellIcon } from '../ui/icons';
+import { SITE_CONFIG } from '@/app/lib/constants';
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
       <div className="container footer-container">
         <Link href="/" className="footer-brand">
           <DumbbellIcon className="footer-logo-icon" />
-          <span className="footer-logo-text">L.A.C FITNESS</span>
+          <span className="footer-logo-text">LAC FITNESS</span>
         </Link>
         
         <div className="footer-links">
@@ -18,7 +19,7 @@ const Footer = () => {
         </div>
         
         <p className="footer-copyright">
-          &copy; {new Date().getFullYear()} L.A.C Fitness All rights reserved.
+          &copy; {new Date().getFullYear()} LAC Fitness. All rights reserved.
         </p>
         <p className="footer-location">Personal Training in Richmond Upon Thames.</p>
       </div>

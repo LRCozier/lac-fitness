@@ -1,13 +1,22 @@
 import { hygraphClient } from '../lib/hygraph-client';
-import { fallbackBlogPosts, fallbackTestimonials } from '../lib/constants';
-import { Post, Testimonials } from '../types';
+import { fallbackBlogPosts, fallbackTestimonials, fallbackServices } from '../lib/constants.js';
+import { Post, Testimonials, Service } from '@/app/types';
 
-export const fetchGraphQL = async <T>(query: string, variables?: any): Promise<T> => {
+const sanitizeQuery = (query: string): string => {
+  return query.replace(/[^\w\s\n{}\[\]():.,@$]/g, '');
+};
+
+export const fetchGraphQL = async <T>(query: string, variables?: Record<string, unknown>): Promise<T> => {
+  if (!hygraphClient) throw new Error('GraphQL client not configured');
+  
   try {
-    return await hygraphClient.request<T>(query, variables);
+    const sanitizedQuery = sanitizeQuery(query);
+    return await hygraphClient.request<T>(sanitizedQuery, variables);
   } catch (error) {
-    console.error('GraphQL Error:', error);
-    throw new Error('Failed to fetch data from CMS');
+    const errorMessage = process.env.NODE_ENV === 'development' 
+      ? `GraphQL Error: ${error instanceof Error ? error.message : 'Unknown error'}`
+      : 'Failed to fetch data from CMS';
+    throw new Error(errorMessage);
   }
 };
 
@@ -21,14 +30,14 @@ export const getBlogPosts = async (): Promise<Post[]> => {
           excerpt
           category
           slug
-          featuredImage { url }
+          featuredImage { url alt }
           publishedAt
         }
       }
     `);
     return data.posts;
   } catch (error) {
-    console.log('Using fallback blog posts');
+    console.warn('Using fallback blog posts due to CMS error');
     return fallbackBlogPosts;
   }
 };
@@ -49,7 +58,7 @@ export const getFeaturedTestimonials = async (): Promise<Testimonials[]> => {
     `);
     return data.testimonials;
   } catch (error) {
-    console.log('Using fallback testimonials');
+    console.warn('Using fallback testimonials due to CMS error');
     return fallbackTestimonials.filter(t => t.featured).slice(0, 3);
   }
 };
@@ -71,9 +80,31 @@ export const getAllTestimonials = async (): Promise<Testimonials[]> => {
     `);
     return data.testimonials;
   } catch (error) {
-    console.log('Using fallback testimonials');
+    console.warn('Using fallback testimonials due to CMS error');
     return fallbackTestimonials;
   }
 };
 
+export const getServices = async (): Promise<Service[]> => {
+  try {
+    const data = await fetchGraphQL<{ services: Service[] }>(`
+      query GetServices {
+        services {
+          id
+          title
+          price
+          description
+          features
+          ctaText
+          duration
+          intensity
+        }
+      }
+    `);
+    return data.services;
+  } catch (error) {
+    console.warn('Using fallback services due to CMS error');
+    return fallbackServices;
+  }
+};
 

@@ -45,3 +45,9 @@ export interface FormErrors {
   message?: string;
   services?: string;
 }
+
+export interface EmailJSConfig {
+  serviceId: string;
+  templateId: string;
+  publicKey: string;
+}

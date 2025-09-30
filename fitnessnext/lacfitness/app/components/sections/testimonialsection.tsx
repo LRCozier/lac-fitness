@@ -1,29 +1,23 @@
-import { getFeaturedTestimonials } from "@/app/utils/graphql-utils";
-import TestimonialCard from "../ui/testimonialcard";
+import { getFeaturedTestimonials } from '@/app/utils/graphql-utils';
+import TestimonialCard from '../ui/testimonialcard';
 
-const TestimonialSection = async () => {
+const TestimonialsSection = async () => {
   const testimonials = await getFeaturedTestimonials();
 
-  if (!testimonials.length) {
-    return null;
-  }
+  if (!testimonials.length) return null;
 
-  return(
+  return (
     <section className="section section-dark">
       <div className="container">
-        <h2 className="section-title">
-          Real Clients, Real Results
-        </h2>
+        <h2 className="section-title text-center">REAL CLIENTS, REAL RESULTS</h2>
         <div className="testimonials-grid">
-          {testimonials.map((testimonials) => (
-            <TestimonialCard
-            key={testimonials.id}
-            testimonial={testimonials} />
+          {testimonials.map((testimonial) => (
+            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default TestimonialSection;
+export default TestimonialsSection;

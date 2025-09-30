@@ -2,7 +2,7 @@ import { Post, Testimonials, Service } from '../types';
 
 // ===== SITE CONFIGURATION =====
 export const SITE_CONFIG = {
-  name: 'Luke Cozier Strength & Conditioning',
+  name: 'LAC Fitness',
   title: 'Luke Cozier - Strength & Conditioning | Richmond Upon Thames',
   description: 'Professional strength and conditioning training focused on skill progression and functional strength. Personal training in Richmond Upon Thames.',
   url: 'https://lacfitness.com',

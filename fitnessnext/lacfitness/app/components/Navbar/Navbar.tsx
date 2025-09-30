@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="container navbar-container">
         <Link href="/" className="navbar-brand" onClick={handleLinkClick} aria-label="Luke Cozier - Home">
           <DumbbellIcon className="navbar-logo-icon" aria-hidden="true" />
-          <span className="navbar-logo-text">LUKE COZIER</span>
+          <span className="navbar-logo-text">LAC FITNESS</span>
         </Link>
         
         <div className="nav-links-desktop">

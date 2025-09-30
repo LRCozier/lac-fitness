@@ -21,7 +21,6 @@ export const metadata: Metadata = {
     siteName: 'Luke Cozier Fitness',
     title: 'LAC Fitness - Strength & Conditioning | Richmond Upon Thames',
     description: 'Professional strength and conditioning training focused on skill progression and functional strength.',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Luke Cozier Strength & Conditioning' }],
   },
 };
 

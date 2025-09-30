@@ -1,5 +1,5 @@
 import { hygraphClient } from '../lib/hygraph-client';
-import { fallbackBlogPosts, fallbackTestimonials, fallbackServices } from '../lib/constants.js';
+import { fallbackBlogPosts, fallbackServices, fallbackTestimonials} from '../lib/constants.js';
 import { Post, Testimonials, Service } from '@/app/types';
 
 const sanitizeQuery = (query: string): string => {

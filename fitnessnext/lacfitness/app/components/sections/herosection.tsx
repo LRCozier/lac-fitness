@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const HeroSection = () => {
   return (
-    <section className="hero-section" style={{ backgroundImage: "url('https://placehold.co/1920x1080/000000/ffffff?text=HERO+IMAGE')" }}>
+    <section className="hero-section">
       <div className="hero-overlay"></div>
       <div className="hero-content">
         <h1>

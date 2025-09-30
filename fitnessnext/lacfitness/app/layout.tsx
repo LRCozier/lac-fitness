@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_GB',
     url: 'https://lacfitness.com',
-    siteName: 'Luke Cozier Fitness',
+    siteName: 'LAC Fitness',
     title: 'LAC Fitness - Strength & Conditioning | Richmond Upon Thames',
     description: 'Professional strength and conditioning training focused on skill progression and functional strength.',
   },

@@ -1,20 +1,14 @@
-import React from "react";
-import Layout from "../components/layouts/layout";
-import Section from "../components/layouts/section";
+import HeroSection from "../components/sections/herosection";
+import SummarySection from "../components/sections/summary";
+import TestimonialsSection from "../components/sections/testimonialsection";
 
-export const metadata = {
-  title: "L.A.C Fitness",
-  description: "From Battle to Breakthrough",
-};
 
-const HomePage = () => {
+export default function Home() {
   return (
-    <Layout>
-      <Section title="L.A.C Fitness" subtitle="From Battle to Breakthrough" children={undefined}>
-        
-      </Section>
-    </Layout>
+    <div className="animate-fade-in">
+      <HeroSection />
+      <SummarySection />
+      <TestimonialsSection />
+    </div>
   );
-};
-
-export default HomePage;
+}

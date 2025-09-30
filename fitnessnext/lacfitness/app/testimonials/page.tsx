@@ -9,7 +9,7 @@ export default async function TestimonialsPage() {
     <div className="section animate-fade-in">
       <div className="container">
         <div className="text-center">
-          <h1 className="page-title">Client Testimonials</h1>
+          <h1 className="page-title">CLIENT TESTIMONIALS</h1>
           <p className="section-text">Hear from the people who've transformed their strength and performance.</p>
         </div>
 
@@ -18,9 +18,7 @@ export default async function TestimonialsPage() {
             <div className="testimonial-categories">
               <button className="testimonial-category-btn active">All</button>
               {categories.map(category => (
-                <button key={category} className="testimonial-category-btn">
-                  {category}
-                </button>
+                <button key={category} className="testimonial-category-btn">{category}</button>
               ))}
             </div>
 
@@ -38,4 +36,5 @@ export default async function TestimonialsPage() {
       </div>
     </div>
   );
+
 }

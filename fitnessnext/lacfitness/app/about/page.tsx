@@ -3,30 +3,20 @@ const About = () => {
     <div className="section animate-fade-in">
       <div className="container container-sm">
         <h1 className="page-title">ABOUT LUKE COZIER</h1>
-        <p className="page-subtitle">Personal Trainer</p>
+        <p className="page-subtitle">Strength & Conditioning Specialist</p>
         <div className="about-grid">
           <div className="about-image-container">
-            <img className="about-image" src="https://placehold.co/400x500/18181b/ffffff?text=Luke+Cozier" alt="Luke Cozier" />
+            <img className="about-image" alt="Luke Cozier" />
           </div>
           <div className="about-content">
-            <h2>My Story & Mission</h2>
-            <p>
-              My name is Luke Cozier, and I'm a 33-year-old personal trainer based here in Richmond Upon Thames. 
-              My journey into strength and conditioning wasn't born from a desire for six-pack abs, but from a 
-              fundamental need for performance and resilience.
-            </p>
-            <p>
-              After years in commercial gyms watching people perform ineffective workouts and chase fleeting 
-              aesthetic goals, I knew there was a better way. My mission is to shift the focus from how you 
-              look to what you can <span className="text-accent font-bold">do</span>. I believe that by building 
-              a strong, capable body through disciplined training, the confidence and aesthetics you desire will 
-              follow as a natural byproduct.
-            </p>
-            <p>
-              I specialize in evidence-based strength and conditioning, focusing on compound movements, 
-              progressive overload, and perfect form. My approach is for men who are serious about long-term 
-              progress, not short-term fixes.
-            </p>
+            <h2>My Mission: To Redefine What Fitness Means.</h2>
+            <p>Fitness isn't about a number on a scale or a fleeting compliment. It is about how you feel when you pick up your child, 
+              the energy you have at the end of a long day, and the quiet confidence that comes from knowing you are capable.</p>
+            <p>I know the other side. I was the "fat kid." I know the mental toll of avoiding mirrors and feeling left behind. My own transformation wasn't just physical; 
+              it was the discovery that strength training is the most powerful tool for building mental resilience and
+              <span className="text-accent font-bold">reclaiming your life.</span>.</p>
+            <p>I specialize in evidence-based strength and conditioning, focusing on compound movements, progressive overload, 
+              and perfect form. My approach is for those who are serious about long-term progress, not short-term fixes.</p>
           </div>
         </div>
       </div>

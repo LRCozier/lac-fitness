@@ -11,12 +11,9 @@ const BlogPage = async () => {
           <h1 className="page-title">THE STRENGTH BLOG</h1>
           <p className="section-text">Knowledge is power. Here's your weekly dose.</p>
         </div>
-        
         {posts.length > 0 ? (
           <div className="blog-grid">
-            {posts.map(post => (
-              <BlogCard key={post.id} post={post} />
-            ))}
+            {posts.map(post => <BlogCard key={post.id} post={post} />)}
           </div>
         ) : (
           <div className="text-center py-12">

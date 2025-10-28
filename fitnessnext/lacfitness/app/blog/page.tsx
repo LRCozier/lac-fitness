@@ -8,8 +8,8 @@ const BlogPage = async () => {
     <div className="section animate-fade-in">
       <div className="container">
         <div className="text-center">
-          <h1 className="page-title">THE STRENGTH BLOG</h1>
-          <p className="section-text">Knowledge is power. Here's your weekly dose.</p>
+          <h1 className="page-title">BEYOND THE "AFTER PIC"</h1>
+          <p className="section-text">Knowledge is power. Experience is the teacher. Here's your weekly dose.</p>
         </div>
         {posts.length > 0 ? (
           <div className="blog-grid">

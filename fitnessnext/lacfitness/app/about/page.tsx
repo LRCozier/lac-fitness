@@ -3,7 +3,7 @@ const About = () => {
     <div className="section animate-fade-in">
       <div className="container container-sm">
         <h1 className="page-title">ABOUT LUKE COZIER</h1>
-        <p className="page-subtitle">Strength & Conditioning Specialist</p>
+        <p className="page-subtitle">Personal Trainer</p>
         <div className="about-grid">
           <div className="about-image-container">
             <img className="about-image" alt="Luke Cozier" />

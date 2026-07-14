@@ -7,9 +7,9 @@ import '@/styles/layout.scss';
 import '@/styles/components.scss';
 import '@/styles/pages.scss';
 
-import { ThemeProvider } from '@/lib/theme-context';
-import AppNavbar from '@/components/layout/AppNavbar';
-import AppFooter from '@/components/layout/AppFooter';
+import { ThemeProvider } from '@/lib/themecontext';
+import AppNavbar from '@/components/layout/Appnavbar';
+import AppFooter from '@/components/layout/Appfooter';
 
 const archivo = Archivo({
   subsets: ['latin'],
@@ -44,13 +44,6 @@ export const metadata: Metadata = {
   },
 };
 
-/**
- * Runs before first paint, so the correct theme is on <html> before any
- * pixel is drawn. This cannot be next/script — that defers, and deferring is
- * precisely the bug. The Vue SPA never needed this because nothing painted
- * until JS booted; Next sends HTML first, so without this every light-mode
- * visitor gets a dark flash.
- */
 const themeScript = `
 (function(){
   try {

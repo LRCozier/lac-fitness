@@ -1,4 +1,5 @@
 import HeroSection from '@/components/ui/sections/Herosection';
+import TrustBar from '@/components/ui/Trustbar';
 import SummarySection from '@/components/ui/sections/Summarysection';
 import ServicesSection from '@/components/ui/sections/Servicessection';
 import PhilosophySection from '@/components/ui/sections/Philosophysection';
@@ -19,6 +20,7 @@ export default async function HomePage() {
   return (
     <>
       <HeroSection />
+      <TrustBar />
       <SummarySection />
       <ServicesSection services={services} />
       <PhilosophySection />

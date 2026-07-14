@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Dumbbell, Menu, X } from 'lucide-react';
 
 import { NAV_LINKS } from '@/lib/constants';
-import ThemeSwitcher from '@/components/themeSwitcher';
+import ThemeSwitcher from '../ui/themeswitcher';
 
 export default function AppNavbar() {
   const [isOpen, setIsOpen] = useState(false);

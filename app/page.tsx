@@ -2,7 +2,6 @@ import HeroSection from '@/components/ui/sections/Herosection';
 import TrustBar from '@/components/ui/Trustbar';
 import SummarySection from '@/components/ui/sections/Summarysection';
 import ServicesSection from '@/components/ui/sections/Servicessection';
-import PhilosophySection from '@/components/ui/sections/Philosophysection';
 import TestimonialsSection from '@/components/ui/sections/Testimonialsection';
 import FaqPreview from '@/components/ui/sections/Faqpreview';
 import CtaBand from '@/components/ui/sections/Ctaband';

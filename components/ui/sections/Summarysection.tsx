@@ -1,46 +1,61 @@
-import { Dumbbell, HeartHandshake, TrendingUp } from 'lucide-react';
+import { ClipboardList, Dumbbell, HeartHandshake } from 'lucide-react';
+import BaseButton from '@/components/ui/Basebutton';
+import ProgressiveOverloadChart from '@/components/ui/Progressiveoverloadchart';
 
 const PILLARS = [
   {
     icon: Dumbbell,
-    title: 'Technique First, Always',
-    body: 'Form, safety, and movement quality come before ego. When you lift well, you progress well.',
+    title: 'Technique First',
+    body: 'Form and movement quality before ego. Lift well, and you progress well.',
   },
   {
-    icon: TrendingUp,
-    title: 'Structured, Not Random',
-    body: 'Evidence-informed programming built on progressive overload and clear progression — not guesswork or fad training.',
+    icon: ClipboardList,
+    title: 'Progressive Overload',
+    body: 'Slightly more, slightly better, over time. Structured programming \u2014 never guesswork.',
   },
   {
     icon: HeartHandshake,
     title: 'Support Beyond the Session',
-    body: 'Guidance on habits, recovery, and mindset, so you don\u2019t just train harder \u2014 you live stronger.',
+    body: 'Habits, recovery, and mindset. Train harder, and live stronger for it.',
   },
 ];
 
 export default function SummarySection() {
   return (
-    <section className="section" aria-labelledby="why-heading">
-      <div className="container">
-        <p className="section-eyebrow">Why train with L.A.C. Fitness</p>
-        <h2 id="why-heading" className="section-title">
-          Strength that transfers to real life
-        </h2>
-        <p className="section-lede">
-          Not just hard workouts — training that builds confidence, capability, and
-          strength you feel every day.
-        </p>
+    <section className="section--band" aria-labelledby="approach-heading">
+      <div className="band-grid band-grid--chart">
+        <div className="band-copy">
+          <p className="eyebrow">My approach</p>
 
-        <div className="pillar-grid">
-          {PILLARS.map(({ icon: Icon, title, body }) => (
-            <article key={title} className="pillar-card">
-              <span className="pillar-icon" aria-hidden="true">
-                <Icon />
-              </span>
-              <h3 className="pillar-title">{title}</h3>
-              <p className="pillar-body">{body}</p>
-            </article>
-          ))}
+          <h2 id="approach-heading">
+            Strength that transfers
+            <br />
+            to real life.
+          </h2>
+
+          <p>
+            No crash diets, no gimmicks, no punishment sessions. Strength is built by
+            doing slightly more, slightly better, over time &mdash; and by technique that
+            still holds up under load twelve months from now.
+          </p>
+
+          <ul className="band-pillars">
+            {PILLARS.map(({ icon: Icon, title, body }) => (
+              <li key={title} className="band-pillar">
+                <Icon aria-hidden="true" />
+                <span className="band-pillar__title">{title}</span>
+                <span className="band-pillar__body">{body}</span>
+              </li>
+            ))}
+          </ul>
+
+          <BaseButton to="/about" variant="secondary">
+            Learn more about me
+          </BaseButton>
+        </div>
+
+        <div className="band-visual">
+          <ProgressiveOverloadChart />
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Instagram, Mail, Music2 } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { SiInstagram, SiTiktok } from '@icons-pack/react-simple-icons';
 
 import {
   CIMSPA_VERIFY_URL,
@@ -11,9 +12,9 @@ import {
 } from '@/lib/constants';
 import type { SocialIcon } from '@/lib/types';
 
-const socialIcons: Record<SocialIcon, typeof Instagram> = {
-  instagram: Instagram,
-  tiktok: Music2,
+const socialIcons: Record<SocialIcon, React.ComponentType<{ className?: string }>> = {
+  instagram: SiInstagram,
+  tiktok: SiTiktok,
 };
 
 export default function AppFooter() {
@@ -53,7 +54,7 @@ export default function AppFooter() {
                       rel="noopener noreferrer"
                       className="footer-link footer-link--icon"
                     >
-                      <Icon className="footer-icon" aria-hidden="true" />
+                      <Icon className="footer-icon footer-icon--brand" />
                       <span>{link.label}</span>
                     </a>
                   </li>
@@ -106,7 +107,7 @@ export default function AppFooter() {
 
         <div className="footer-base">
           <p className="footer-copyright">
-            © {year} Luke Rudderham-Cozier. All rights reserved.
+            &copy; {year} Luke Rudderham-Cozier. All rights reserved.
           </p>
         </div>
       </div>

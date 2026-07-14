@@ -242,6 +242,12 @@
   flex-shrink: 0;
 }
 
+.footer-icon--brand {
+  width: 0.9375rem;
+  height: 0.9375rem;
+  fill: currentColor;
+}
+
 .footer-address {
   font-style: normal;
   font-size: var(--text-sm);

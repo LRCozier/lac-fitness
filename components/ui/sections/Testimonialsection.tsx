@@ -1,5 +1,5 @@
+import SplitHeader from '@/components/ui/Splitheader';
 import TestimonialCard from '@/components/ui/cards/Testimonialcard';
-import BaseButton from '@/components/ui/Basebutton';
 import type { Testimonial } from '@/lib/types';
 
 export default function TestimonialsSection({
@@ -12,22 +12,24 @@ export default function TestimonialsSection({
   return (
     <section className="section section--alt" aria-labelledby="testimonials-heading">
       <div className="container">
-        <p className="section-eyebrow">In their words</p>
-        <h2 id="testimonials-heading" className="section-title">
-          Testimonials
-        </h2>
-
-        <div className="testimonial-grid">
-          {testimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-          ))}
-        </div>
-
-        <div className="section-actions">
-          <BaseButton to="/testimonials" variant="secondary">
-            Read more testimonials
-          </BaseButton>
-        </div>
+        <SplitHeader
+          headingId="testimonials-heading"
+          eyebrow="What clients say"
+          title={
+            <>
+              Real people.
+              <br />
+              Real results.
+            </>
+          }
+          link={{ href: '/testimonials', label: 'Read more testimonials' }}
+        >
+          <div className="testimonial-grid testimonial-grid--split">
+            {testimonials.map((testimonial) => (
+              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+            ))}
+          </div>
+        </SplitHeader>
       </div>
     </section>
   );

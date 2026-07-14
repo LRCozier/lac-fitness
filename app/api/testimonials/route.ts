@@ -1,4 +1,4 @@
-import { getAllTestimonials } from '@/lib/server/hygraph';
+import { getAllTestimonials } from '@/lib/server/Hygraph';
 
 export const revalidate = 3600;
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <section className="section not-found-wrapper">
+    <section className="section section--centered not-found-wrapper">
       <div className="container text-center">
         <p className="not-found-code">404</p>
         <h1 className="page-title">Page Not Found</h1>

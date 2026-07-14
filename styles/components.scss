@@ -611,15 +611,30 @@
 
 /* ---- Split section header ------------------------------------------------ */
 
-.split-header {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  align-items: start;
+.split-header__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  transition: gap 200ms ease;
 }
 
-.split-header__copy {
-  max-width: 22rem;
+.split-header__link:hover {
+  gap: 0.875rem;
+}
+
+.split-header__link svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.split-header__content .service-grid,
+.split-header__content .pillar-grid,
+.split-header__content .testimonial-grid {
+  margin-top: 0;
 }
 
 /* ---- Service card with media --------------------------------------------- */

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import ServiceTabs from '@/components/ui/Servicetabs';
+import ServiceTabs from '@/components/ui/Servicestabs';
 import { getServices } from '@/lib/server/Hygraph';
 
 export const metadata: Metadata = {

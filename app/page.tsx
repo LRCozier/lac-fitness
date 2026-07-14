@@ -22,7 +22,6 @@ export default async function HomePage() {
       <TrustBar />
       <SummarySection />
       <ServicesSection services={services} />
-      <PhilosophySection />
       <TestimonialsSection testimonials={testimonials} />
       <FaqPreview />
       <CtaBand />

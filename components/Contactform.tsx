@@ -28,6 +28,12 @@ const SERVICE_OPTIONS: CheckboxOption[] = [
     description:
       'Remote guidance, tailored programming, and accountability for independent training.',
   },
+  {
+    value: 'Online Coaching',
+    label: 'Online Coaching',
+    description:
+      'Ongoing coaching wherever you are — programming that adapts to you week by week.',
+  }
 ];
 
 const PHONE_REGEX = /^[0-9+().\-\s]{7,20}$/;

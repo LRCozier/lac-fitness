@@ -5,7 +5,7 @@ import { getServices } from '@/lib/server/Hygraph';
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'Strength coaching tailored to your experience, confidence, and goals. 1-to-1 personal training, 2-to-1 group sessions, and online programming.',
+    'Coaching tailored to your experience, confidence, and goals. 1-to-1 personal training, 2-to-1 small group sessions, and online coaching — for building strength and going the distance.',
 };
 
 export const revalidate = 3600;
@@ -19,9 +19,9 @@ export default async function ServicesPage() {
         <header className="page-header">
           <h1 className="page-title">Services</h1>
           <p className="page-subtitle">
-            No-nonsense strength coaching tailored to your experience, confidence, and
-            goals &mdash; whether you&rsquo;re just starting, returning to training, or
-            levelling up.
+            Coaching tailored to your experience, confidence, and goals — whether you're just 
+            starting out, returning to training, or building toward a distance. In person in 
+            Kingston, or online wherever you are.
           </p>
         </header>
 

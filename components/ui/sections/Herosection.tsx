@@ -6,7 +6,7 @@ const ASSURANCES = [
   'Evidence-based coaching',
   'Tailored to you',
   'Technique first, always',
-  'Support beyond the session',
+  'Strength & endurance coaching',
 ];
 
 export default function HeroSection() {
@@ -26,18 +26,19 @@ export default function HeroSection() {
       <div className="hero-overlay" aria-hidden="true" />
 
       <div className="container hero-content">
-        <p className="eyebrow">Strength. Confidence. Progress.</p>
+        <p className="eyebrow">Strength. Endurance. Confidence.</p>
 
         <h1 id="hero-heading" className="hero-title">
-          <span className="block">Build Strength.</span>
+          <span className="block">Get Strong.</span>
           <span className="block">
-            Build <span className="accent-underline">Confidence.</span>
+            Go The <span className="accent-underline">Distance.</span>
           </span>
         </h1>
 
         <p className="hero-lede">
-          Supportive 1:1 training for beginners, returners, and everyday adults who want
-          to build strength without intimidation. Based in Kingston Upon Thames.
+          Supportive 1:1 coaching that builds real strength — no intimidation, no ego — 
+          then the conditioning to take it further, whether that's everyday confidence or 
+          your first finish line. Based in Kingston Upon Thames.
         </p>
 
         <div className="hero-cta">

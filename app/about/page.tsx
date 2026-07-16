@@ -4,7 +4,7 @@ import Image from 'next/image';
 export const metadata: Metadata = {
   title: 'About Luke Cozier, MCIMSPA',
   description:
-    'CIMSPA-registered personal trainer in Kingston Upon Thames. Strength coaching for people who have felt unseen, intimidated, or stuck in gym environments.',
+    'CIMSPA-registered personal trainer in Kingston Upon Thames. Strength and hybrid coaching for people who have felt unseen, intimidated, or stuck — helping them build real strength and go the distance.',
 };
 
 const COACHING_PRINCIPLES = [
@@ -12,6 +12,7 @@ const COACHING_PRINCIPLES = [
   ['Progressive overload', 'A structured path to getting stronger, safely.'],
   ['Technique first', 'Safety and longevity over ego lifting.'],
   ['Resilience', 'Building a body and mind that can handle life\u2019s challenges.'],
+  ['Conditioning that carries', 'Strength that holds up over miles, not just reps.'],
 ];
 
 export default function AboutPage() {
@@ -44,8 +45,8 @@ export default function AboutPage() {
               tank, and standing a little taller because you finally trust yourself.
             </p>
             <p>
-              It&rsquo;s quiet confidence, built rep by rep. It&rsquo;s strength that
-              follows you out of the gym.
+              It's quiet confidence, built rep by rep. It's the confidence to go further than you thought 
+              you could — through a doorway, a doubt, or a finish line.
             </p>
 
             <h2>I know the other side &mdash; because I lived it</h2>
@@ -54,7 +55,11 @@ export default function AboutPage() {
               the one who avoided mirrors, hated P.E., and pretended not to care while
               quietly feeling humiliated. I remember the sting of being picked last, the
               anxiety of changing rooms, and the way you start to shrink yourself so no one
-              notices you.
+              notices you. These days, that same kid who dreaded P.E. and shrank into the changing-room 
+              walls trains for half marathons — not because he has to, but because he can. Thirteen miles, 
+              for the joy of it. Tell that to me at fifteen and I'd have laughed in your face. But that's 
+              what strength really is: build enough of it and it stops being about the gym at all. It becomes 
+              range. It becomes distance. It becomes a life that keeps getting bigger.
             </p>
             <p>
               The weight I carried wasn&rsquo;t just physical. It was emotional. It was
@@ -74,7 +79,9 @@ export default function AboutPage() {
             </p>
 
             <h2>What I coach</h2>
-            <p>I specialise in evidence-based strength training that prioritises:</p>
+            <p>I specialise in evidence-based strength training — the foundation everything 
+              else is built on — and hybrid coaching for people who want to take that strength 
+              somewhere: a race, a distance, a first finish line. Both are built on the same principles:</p>
             <ul className="principle-list">
               {COACHING_PRINCIPLES.map(([title, body]) => (
                 <li key={title}>
@@ -89,9 +96,10 @@ export default function AboutPage() {
 
             <h2>The mission of L.A.C. Fitness</h2>
             <p>
-              Not to create athletes. Not to chase fads or transformations for social media.
-              But to help people who feel how I used to feel &mdash; unseen, intimidated,
-              stuck &mdash; discover what strength can do for them.
+              Not to manufacture "athletes" or chase transformations for the algorithm — 
+              but to help people who feel how I used to feel, unseen and intimidated and stuck, 
+              discover what their bodies are actually capable of. Whether that's lifting with 
+              confidence or crossing a line they never thought they'd reach.
             </p>
             <p>Because once you learn to lift, you learn to live differently.</p>
           </article>

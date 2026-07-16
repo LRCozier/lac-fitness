@@ -14,7 +14,7 @@ export default function ProgressiveOverloadChart() {
       <figcaption className="overload-chart__header">
         <h3 className="overload-chart__title">Progressive Overload</h3>
         <p className="overload-chart__subtitle">
-          Training load, week by week. Small increases, held under good technique.
+          Load or mileage, week by week. Small increases, held under good form.
         </p>
       </figcaption>
  

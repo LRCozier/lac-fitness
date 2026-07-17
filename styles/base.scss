@@ -97,7 +97,7 @@ svg {
 
 .container {
   width: 100%;
-  max-width: var(--container);
+  max-width: fit-content;
   margin-inline: auto;
   padding-inline: 1.5rem;
 }

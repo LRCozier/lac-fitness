@@ -392,6 +392,17 @@
   font-size: var(--text-sm);
 }
 
+.terms-meta {
+  margin-top: 1rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+ 
+.terms-toc-title {
+  font-size: var(--text-lg);
+  margin-bottom: 1rem;
+}
+
 /* ---- 404 ----------------------------------------------------------------- */
 
 .not-found-wrapper {

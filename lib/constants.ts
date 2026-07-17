@@ -22,9 +22,8 @@ export const NAV_LINKS: NavLink[] = [
 export const CONTACT_INFO = {
   email: 'lacfitnessuk@gmail.com',
   consultationHours: [
-    'Mon–Fri: 5 PM – 8 PM',
-    'Saturday: 9 AM – 2 PM',
-    'Sunday: 9 AM – 2 PM',
+    'Mon–Fri: 5 PM – 9 PM',
+    'Saturday: 10 AM – 3 PM',
   ],
 } as const;
 

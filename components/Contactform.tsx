@@ -69,24 +69,24 @@ export default function ContactForm() {
   };
 
 
-  const renderWidget = useCallback(() => {
-    if (widgetIdRef.current !== null) return;
-    if (!siteKey) {
-      console.warn('[reCAPTCHA] NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not set.');
-      return;
-    }
-    if (!containerRef.current || !window.grecaptcha?.render) return;
+ const renderWidget = useCallback(() => {
+  if (!siteKey) {
+    console.warn('[reCAPTCHA] NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not set.');
+    return;
+  }
+  if (!containerRef.current || !window.grecaptcha?.render) return;
+  if (containerRef.current.children.length > 0) return;
 
-    widgetIdRef.current = window.grecaptcha.render(containerRef.current, {
-      sitekey: siteKey,
-      callback: () => setErrors((current) => ({ ...current, captcha: undefined })),
-      'expired-callback': () =>
-        setErrors((current) => ({
-          ...current,
-          captcha: 'CAPTCHA expired — please tick the box again.',
-        })),
-    });
-  }, [siteKey]);
+  widgetIdRef.current = window.grecaptcha.render(containerRef.current, {
+    sitekey: siteKey,
+    callback: () => setErrors((current) => ({ ...current, captcha: undefined })),
+    'expired-callback': () =>
+      setErrors((current) => ({
+        ...current,
+        captcha: 'CAPTCHA expired — please tick the box again.',
+      })),
+  });
+}, [siteKey]);
 
 
   useEffect(() => {

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Archivo, Inter } from 'next/font/google';
+import JsonLd from '@/components/Jsonld';
 
 import '@/styles/variables.scss';
 import '@/styles/base.scss';
@@ -58,6 +59,7 @@ const themeScript = `
 })();
 `;
 
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
@@ -67,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <JsonLd />
       </head>
       <body>
         <ThemeProvider>

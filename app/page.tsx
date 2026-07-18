@@ -5,7 +5,7 @@ import ServicesSection from '@/components/ui/sections/Servicessection';
 import TestimonialsSection from '@/components/ui/sections/Testimonialsection';
 import FaqPreview from '@/components/ui/sections/Faqpreview';
 import CtaBand from '@/components/ui/sections/Ctaband';
-import { getFeaturedTestimonials, getServices } from '@/lib/server/Hygraph';
+import { getFeaturedTestimonials, getServices } from '@/lib/server/hygraph';
 
 export const revalidate = 3600;
 

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ServiceTabs from '@/components/ui/Servicestabs';
-import { getServices } from '@/lib/server/Hygraph';
+import { getServices } from '@/lib/server/hygraph';
 
 export const metadata: Metadata = {
   title: 'Services',

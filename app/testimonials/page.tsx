@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import TestimonialFilter from '@/components/ui/Testimonialfilter';
-import { getAllTestimonials } from '@/lib/server/Hygraph';
+import { getAllTestimonials } from '@/lib/server/hygraph';
 
 export const metadata: Metadata = {
   title: 'Client Testimonials',

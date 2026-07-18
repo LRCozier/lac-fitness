@@ -1,4 +1,4 @@
-import { getServices } from '@/lib/server/Hygraph';
+import { getServices } from '@/lib/server/hygraph';
 
 export const revalidate = 3600;
 

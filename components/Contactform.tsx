@@ -32,8 +32,8 @@ const SERVICE_OPTIONS: CheckboxOption[] = [
     value: 'Online Coaching',
     label: 'Online Coaching',
     description:
-      'Ongoing coaching wherever you are — programming that adapts to you week by week.',
-  }
+      'Ongoing coaching wherever you are \u2014 programming that adapts to you week by week.',
+  },
 ];
 
 const PHONE_REGEX = /^[0-9+().\-\s]{7,20}$/;
@@ -68,29 +68,30 @@ export default function ContactForm() {
     setForm((current) => ({ ...current, [key]: value }));
   };
 
+  const renderWidget = useCallback(() => {
+    if (!siteKey) {
+      console.warn('[reCAPTCHA] NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not set.');
+      return;
+    }
+    if (!containerRef.current || !window.grecaptcha?.render) return;
 
- const renderWidget = useCallback(() => {
-  if (!siteKey) {
-    console.warn('[reCAPTCHA] NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not set.');
-    return;
-  }
-  if (!containerRef.current || !window.grecaptcha?.render) return;
-  if (containerRef.current.children.length > 0) return;
+    if (containerRef.current.children.length > 0) return;
 
-  widgetIdRef.current = window.grecaptcha.render(containerRef.current, {
-    sitekey: siteKey,
-    callback: () => setErrors((current) => ({ ...current, captcha: undefined })),
-    'expired-callback': () =>
-      setErrors((current) => ({
-        ...current,
-        captcha: 'CAPTCHA expired — please tick the box again.',
-      })),
-  });
-}, [siteKey]);
-
+    widgetIdRef.current = window.grecaptcha.render(containerRef.current, {
+      sitekey: siteKey,
+      callback: () => setErrors((current) => ({ ...current, captcha: undefined })),
+      'expired-callback': () =>
+        setErrors((current) => ({
+          ...current,
+          captcha: 'CAPTCHA expired \u2014 please tick the box again.',
+        })),
+    });
+  }, [siteKey]);
 
   useEffect(() => {
-    if (window.grecaptcha?.render) renderWidget();
+    if (window.grecaptcha?.ready) {
+      window.grecaptcha.ready(renderWidget);
+    }
   }, [renderWidget]);
 
   const validate = (): boolean => {
@@ -134,7 +135,6 @@ export default function ContactForm() {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-
 
     const fieldsValid = validate();
 
@@ -196,7 +196,7 @@ export default function ContactForm() {
       <Script
         src="https://www.google.com/recaptcha/api.js?render=explicit"
         strategy="afterInteractive"
-        onReady={renderWidget}
+        onLoad={() => window.grecaptcha?.ready(renderWidget)}
       />
 
       <form className="contact-form" onSubmit={handleSubmit} noValidate>
@@ -259,7 +259,14 @@ export default function ContactForm() {
         />
 
         <div className="form-group">
-          <div ref={containerRef} className="recaptcha-container" />
+          <div className="recaptcha-container">
+            <div
+              ref={containerRef}
+              suppressHydrationWarning
+              dangerouslySetInnerHTML={{ __html: '' }}
+            />
+          </div>
+
           {errors.captcha && (
             <span className="form-error" role="alert">
               {errors.captcha}

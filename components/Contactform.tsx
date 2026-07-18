@@ -1,7 +1,7 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
-import Script from 'next/script';
+import { useRef, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import BaseInput from '@/components/ui/form/Baseinput';
 import BaseTextArea from '@/components/ui/form/Basetextarea';
@@ -56,8 +56,7 @@ export default function ContactForm() {
     message: string;
   } | null>(null);
 
-  const containerRef = useRef<HTMLDivElement>(null);
-  const widgetIdRef = useRef<number | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
@@ -67,32 +66,6 @@ export default function ContactForm() {
   ) => {
     setForm((current) => ({ ...current, [key]: value }));
   };
-
-  const renderWidget = useCallback(() => {
-    if (!siteKey) {
-      console.warn('[reCAPTCHA] NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not set.');
-      return;
-    }
-    if (!containerRef.current || !window.grecaptcha?.render) return;
-
-    if (containerRef.current.children.length > 0) return;
-
-    widgetIdRef.current = window.grecaptcha.render(containerRef.current, {
-      sitekey: siteKey,
-      callback: () => setErrors((current) => ({ ...current, captcha: undefined })),
-      'expired-callback': () =>
-        setErrors((current) => ({
-          ...current,
-          captcha: 'CAPTCHA expired \u2014 please tick the box again.',
-        })),
-    });
-  }, [siteKey]);
-
-  useEffect(() => {
-    if (window.grecaptcha?.ready) {
-      window.grecaptcha.ready(renderWidget);
-    }
-  }, [renderWidget]);
 
   const validate = (): boolean => {
     const next: FormErrors = {};
@@ -128,20 +101,15 @@ export default function ContactForm() {
   const resetForm = () => {
     setForm(EMPTY_FORM);
     setErrors({});
-    if (widgetIdRef.current !== null) {
-      window.grecaptcha?.reset(widgetIdRef.current);
-    }
+    recaptchaRef.current?.reset();
   };
 
-  const handleSubmit = async (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const fieldsValid = validate();
 
-    const token =
-      widgetIdRef.current !== null
-        ? window.grecaptcha?.getResponse(widgetIdRef.current) || ''
-        : '';
+    const token = recaptchaRef.current?.getValue() || '';
 
     if (!token) {
       setErrors((current) => ({
@@ -179,6 +147,8 @@ export default function ContactForm() {
       });
       resetForm();
     } catch (error) {
+      recaptchaRef.current?.reset();
+
       setStatus({
         type: 'error',
         message:
@@ -192,106 +162,112 @@ export default function ContactForm() {
   };
 
   return (
-    <>
-      <Script
-        src="https://www.google.com/recaptcha/api.js?render=explicit"
-        strategy="afterInteractive"
-        onLoad={() => window.grecaptcha?.ready(renderWidget)}
+    <form className="contact-form" onSubmit={handleSubmit} noValidate>
+      <BaseInput
+        id="name"
+        label="Name"
+        type="text"
+        autoComplete="name"
+        placeholder="Your name"
+        required
+        value={form.name}
+        onChange={(value) => setField('name', value)}
+        error={errors.name}
       />
 
-      <form className="contact-form" onSubmit={handleSubmit} noValidate>
-        <BaseInput
-          id="name"
-          label="Name"
-          type="text"
-          autoComplete="name"
-          placeholder="Your name"
-          required
-          value={form.name}
-          onChange={(value) => setField('name', value)}
-          error={errors.name}
-        />
+      <BaseInput
+        id="email"
+        label="Email"
+        type="email"
+        autoComplete="email"
+        placeholder="you@example.com"
+        required
+        value={form.email}
+        onChange={(value) => setField('email', value)}
+        error={errors.email}
+      />
 
-        <BaseInput
-          id="email"
-          label="Email"
-          type="email"
-          autoComplete="email"
-          placeholder="you@example.com"
-          required
-          value={form.email}
-          onChange={(value) => setField('email', value)}
-          error={errors.email}
-        />
+      <BaseInput
+        id="phone"
+        label="Phone number"
+        type="tel"
+        autoComplete="tel"
+        placeholder="e.g. +44 7700 900123"
+        required
+        value={form.phone}
+        onChange={(value) => setField('phone', value)}
+        error={errors.phone}
+      />
 
-        <BaseInput
-          id="phone"
-          label="Phone number"
-          type="tel"
-          autoComplete="tel"
-          placeholder="e.g. +44 7700 900123"
-          required
-          value={form.phone}
-          onChange={(value) => setField('phone', value)}
-          error={errors.phone}
-        />
+      <BaseCheckboxGroup
+        name="services"
+        legend="What are you interested in?"
+        hint="You can select more than one option."
+        required
+        options={SERVICE_OPTIONS}
+        value={form.services}
+        onChange={(value) => setField('services', value)}
+        error={errors.services}
+      />
 
-        <BaseCheckboxGroup
-          name="services"
-          legend="What are you interested in?"
-          hint="You can select more than one option."
-          required
-          options={SERVICE_OPTIONS}
-          value={form.services}
-          onChange={(value) => setField('services', value)}
-          error={errors.services}
-        />
+      <BaseTextArea
+        id="message"
+        label="Tell me about your goals"
+        rows={6}
+        hint="Include relevant history, injuries, or what you'd like to achieve."
+        required
+        value={form.message}
+        onChange={(value) => setField('message', value)}
+        error={errors.message}
+      />
 
-        <BaseTextArea
-          id="message"
-          label="Tell me about your goals"
-          rows={6}
-          hint="Include relevant history, injuries, or what you'd like to achieve."
-          required
-          value={form.message}
-          onChange={(value) => setField('message', value)}
-          error={errors.message}
-        />
-
-        <div className="form-group">
-          <div className="recaptcha-container">
-            <div
-              ref={containerRef}
-              suppressHydrationWarning
-              dangerouslySetInnerHTML={{ __html: '' }}
+      <div className="form-group">
+        <div className="recaptcha-container">
+          {siteKey ? (
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={siteKey}
+              onChange={() =>
+                setErrors((current) => ({ ...current, captcha: undefined }))
+              }
+              onExpired={() =>
+                setErrors((current) => ({
+                  ...current,
+                  captcha: 'CAPTCHA expired \u2014 please tick the box again.',
+                }))
+              }
             />
-          </div>
-
-          {errors.captcha && (
-            <span className="form-error" role="alert">
-              {errors.captcha}
-            </span>
+          ) : (
+            <p className="form-error">
+              reCAPTCHA is not configured. Please email me directly.
+            </p>
           )}
         </div>
 
-        <div className="form-group">
-          <BaseButton type="submit" variant="primary" size="lg" disabled={isSubmitting}>
-            {isSubmitting ? 'Sending\u2026' : 'Send Message'}
-          </BaseButton>
-        </div>
-
-        {status && (
-          <p
-            className={
-              status.type === 'success' ? 'form-status-success' : 'form-status-error'
-            }
-            role="status"
-            aria-live="polite"
-          >
-            {status.message}
-          </p>
+        {errors.captcha && (
+          <span className="form-error" role="alert">
+            {errors.captcha}
+          </span>
         )}
-      </form>
-    </>
+      </div>
+
+      <div className="form-group">
+        <BaseButton type="submit" variant="primary" size="lg" disabled={isSubmitting}>
+          {isSubmitting ? 'Sending\u2026' : 'Send Message'}
+        </BaseButton>
+      </div>
+
+      {status && (
+        <p
+          className={
+            status.type === 'success' ? 'form-status-success' : 'form-status-error'
+          }
+          role="status"
+          aria-live="polite"
+        >
+          {status.message}
+        </p>
+      )}
+    </form>
   );
 }

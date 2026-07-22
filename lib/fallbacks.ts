@@ -102,17 +102,6 @@ export const fallbackTestimonials: Testimonial[] = [
   },
   {
     id: '2',
-    clientName: 'Kerry F',
-    location: 'Hounslow',
-    testimonialText:
-      'My rugby performance improved massively — and so did my belief in myself.',
-    rating: 5,
-    category: 'Hybrid',
-    featured: true,
-    createdAt: new Date('2024-01-05').toISOString(),
-  },
-  {
-    id: '3',
     clientName: 'Debbie W.',
     location: 'Kingston',
     testimonialText: 
@@ -123,7 +112,7 @@ export const fallbackTestimonials: Testimonial[] = [
     createdAt: new Date('2026-07-12').toISOString(),
   },
   {
-    id: '4',
+    id: '3',
     clientName: 'Lily T.',
     location: 'New Malden',
     testimonialText:

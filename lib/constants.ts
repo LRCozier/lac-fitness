@@ -2,9 +2,9 @@ import type { FooterLink, NavLink, SocialLink } from './types';
 
 export const SITE_CONFIG = {
   name: 'L.A.C. Fitness',
-  title: 'Luke Cozier — Strength & Conditioning | Kingston Upon Thames',
+  title: 'L.A.C. Fitness — Strength & Hybrid Coaching, Kingston',
   description:
-    'Supportive 1:1 strength coaching for beginners, returners, and everyday adults. Build strength without intimidation. Based in Kingston Upon Thames.',
+    'Hybrid coaching that builds strength and endurance together — for beginners,returners, and lifters training for a race. Kingston Upon Thames.',
   url: 'https://lacfitness.com',
   author: 'Luke Rudderham-Cozier',
   location: 'Kingston Upon Thames, London',

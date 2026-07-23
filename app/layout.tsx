@@ -28,20 +28,20 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://lacfitness.com'),
   title: {
-    default: 'L.A.C. Fitness — Strength & Conditioning | Kingston Upon Thames',
+    default: 'L.A.C. Fitness — Strength & Hybrid Coaching, Kingston',
     template: '%s | L.A.C. Fitness',
   },
   description:
-    'Supportive 1:1 strength coaching for beginners, returners, and everyday adults. Build strength without intimidation. Based in Kingston Upon Thames.',
+    'Hybrid coaching that builds strength and endurance together — for beginners,returners, and lifters training for a race. Kingston Upon Thames.',
   authors: [{ name: 'Luke Rudderham-Cozier' }],
   openGraph: {
     type: 'website',
     locale: 'en_GB',
     url: 'https://lacfitness.com',
     siteName: 'L.A.C. Fitness',
-    title: 'L.A.C. Fitness — Strength & Conditioning | Kingston Upon Thames',
+    title: 'L.A.C. Fitness — Strength & Hybrid Coaching, Kingston',
     description:
-      'Supportive 1:1 strength coaching for beginners, returners, and everyday adults. Build strength without intimidation.',
+      'Hybrid coaching that builds strength and endurance together — for beginners,returners, and lifters training for a race. Kingston Upon Thames.',
   },
 };
 

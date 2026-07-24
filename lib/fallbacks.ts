@@ -122,4 +122,15 @@ export const fallbackTestimonials: Testimonial[] = [
     featured: false,
     createdAt: new Date('2023-12-28').toISOString(),
   },
+ {
+  id: '4',
+  clientName: 'Kerry F.',
+  location: 'Whitton',
+  testimonialText:
+    "I've been training with Luke and, honestly... what a guy! He's incredibly knowledgeable and explains everything so well. He takes the time to make sure your technique is spot on, so you actually feel confident doing the exercises on your own. He knows exactly how to challenge you while making every session enjoyable. There's always a laugh in between sets (if you can catch your breath! 😂). I couldn't recommend him highly enough! 💪🌟",
+  rating: 5,
+  category: 'Strength',
+  featured: true,
+  createdAt: new Date('2023-12-28').toISOString(),
+  },
 ];
